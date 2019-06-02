@@ -12,7 +12,7 @@ public class FileViewModel {
 	private int SocoUm;
 	private int ChuteUm;
 	private int PoderUm;
-	private String ModalidadeUm;
+	private int ModalidadeUm;
 	private String NomeDois;
 	private String CategoriaDois;
 	private String PaisDois;
@@ -22,7 +22,7 @@ public class FileViewModel {
 	private int SocoDois;
 	private int ChuteDois;
 	private int PoderDois;
-	private String ModalidadeDois;
+	private int ModalidadeDois;
 
 	public FileViewModel() {
 
@@ -116,11 +116,11 @@ public class FileViewModel {
 		PoderUm = poderUm;
 	}
 
-	public String getModalidadeUm() {
+	public int getModalidadeUm() {
 		return ModalidadeUm;
 	}
 
-	public void setModalidadeUm(String modalidadeUm) {
+	public void setModalidadeUm(int modalidadeUm) {
 		ModalidadeUm = modalidadeUm;
 	}
 
@@ -196,11 +196,11 @@ public class FileViewModel {
 		PoderDois = poderDois;
 	}
 
-	public String getModalidadeDois() {
+	public int getModalidadeDois() {
 		return ModalidadeDois;
 	}
 
-	public void setModalidadeDois(String modalidadeDois) {
+	public void setModalidadeDois(int modalidadeDois) {
 		ModalidadeDois = modalidadeDois;
 	}
 

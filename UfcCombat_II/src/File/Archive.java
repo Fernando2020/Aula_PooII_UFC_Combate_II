@@ -12,7 +12,7 @@ public class Archive {
 	private String path = "files/";
 	private File File;
 	private File ArrayFile[];
-	private ArrayList<FileViewModel> ListFileViewModel = new ArrayList<FileViewModel>();
+	private ArrayList<FileViewModel> ListFileViewModel;
 
 	public void ReadArchivesPath() throws IOException {
 		this.File = new File(path);
@@ -21,7 +21,8 @@ public class Archive {
 
 	public void ReadArchives(int val) throws IOException {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(ArrayFile[1]));
+			ListFileViewModel = new ArrayList<FileViewModel>();
+			BufferedReader br = new BufferedReader(new FileReader(ArrayFile[val]));
 			String arrayTmp[];
 			while (br.ready()) {
 				String linha = br.readLine();
@@ -39,7 +40,7 @@ public class Archive {
 				fileTmp.setSocoUm(Integer.parseInt(arrayTmp[9]));
 				fileTmp.setChuteUm(Integer.parseInt(arrayTmp[10]));
 				fileTmp.setPoderUm(Integer.parseInt(arrayTmp[11]));
-				fileTmp.setModalidadeUm(arrayTmp[12]);
+				fileTmp.setModalidadeUm(Integer.parseInt(arrayTmp[12]));
 				fileTmp.setNomeDois(arrayTmp[13]);
 				fileTmp.setCategoriaDois(arrayTmp[14]);
 				fileTmp.setPaisDois(arrayTmp[15]);
@@ -49,7 +50,7 @@ public class Archive {
 				fileTmp.setSocoDois(Integer.parseInt(arrayTmp[19]));
 				fileTmp.setChuteDois(Integer.parseInt(arrayTmp[20]));
 				fileTmp.setPoderDois(Integer.parseInt(arrayTmp[21]));
-				fileTmp.setModalidadeDois(arrayTmp[22]);
+				fileTmp.setModalidadeDois(Integer.parseInt(arrayTmp[22]));
 
 				this.ListFileViewModel.add(fileTmp);
 			}
@@ -58,8 +59,16 @@ public class Archive {
 			ioe.printStackTrace();
 		}
 	}
-	
-	public ArrayList<FileViewModel> GetListFileViewModel(){
+
+	public ArrayList<FileViewModel> GetListFileViewModel() {
 		return this.ListFileViewModel;
+	}
+
+	public String getArrayFile(int number) {
+		return ArrayFile[number].getName();
+	}
+	
+	public int getCountArray() {
+		return ArrayFile.length;
 	}
 }

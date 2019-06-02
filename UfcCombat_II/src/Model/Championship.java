@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Championship {
 	private int Id;
 	private String Name;
+
 	private ArrayList<Fighter> FighterList = new ArrayList<Fighter>();
 	private ArrayList<Combat> CombatList = new ArrayList<Combat>();
 
 	// Constructor
-	public Championship(int id, String name) {
-		Id = id;
+	public Championship(String name) {
 		Name = name;
 	}
 
@@ -36,29 +36,19 @@ public class Championship {
 	}
 
 	// lista de combate
-	public void SetCombat(int playerController) {
+	public void SetCombat() {
 		int idCombat = 1;
-		for (int i = 0; i < FighterList.size(); i++)
-			if (i != playerController) {
-				CombatList.add(new Combat(idCombat, "Luta - " + idCombat, FighterList.get(playerController),
-						FighterList.get(i)));
-				idCombat++;
-			}
+		for (int i = 0; i < FighterList.size(); i += 2) {
+			CombatList.add(new Combat(Name + " - Combate - " + idCombat, FighterList.get(i).getCategory(),
+					FighterList.get(i), FighterList.get(i + 1)));
+			idCombat++;
+		}
 	}
 
 	// inicio de combate
 	public void InvokeCombat() {
 		for (int i = 0; i < CombatList.size(); i++) {
 			CombatList.get(i).Play();
-
-			if (GameOverVerification(CombatList.get(i).GetLoser()))
-				return;
 		}
-	}
-
-	public boolean GameOverVerification(Fighter loser) {
-		if (loser.GetController().getClass().getName().equals("Player"))
-			return true;
-		return false;
 	}
 }

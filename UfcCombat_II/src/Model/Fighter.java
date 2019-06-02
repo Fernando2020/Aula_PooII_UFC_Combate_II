@@ -1,11 +1,13 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Fighter {
 	private int Id;
 	private String Name;
+	private String Category;
+	private String Parents;
+	private String Sex;
 	private int Life;
 	private int Point;
 	private ArrayList<Actions> ActionsList = new ArrayList<Actions>();
@@ -13,27 +15,30 @@ public class Fighter {
 	private EntityControllerBase Controller;
 
 	// Constructor
-	public Fighter(int id, String name, Player player, int point)
-	{
-		Id = id;
+	public Fighter(String name, String parents, String category, String sex, Player player, int point) {
 		Name = name;
+		Category = category;
+		Parents = parents;
+		Sex = sex;
 		Controller = player;
 		Life = 100;
 		Point = point;
-		AddSkillsList();
 	}
 
-	public Fighter(int id, String name, Npc npc, int point)
-	{
-		Id = id;
+	public Fighter(String name, String parents, String category, String sex, Npc npc, int point) {
 		Name = name;
+		Category = category;
+		Parents = parents;
+		Sex = sex;
 		Controller = npc;
 		Life = 100;
 		Point = point;
-		AddSkillsList();
 	}
 
+	public Fighter() {}
+	
 	// GetSet
+
 	public int GetId() {
 		return Id;
 	}
@@ -44,6 +49,30 @@ public class Fighter {
 
 	public int GetLife() {
 		return Life;
+	}
+
+	public String getCategory() {
+		return Category;
+	}
+
+	public void setCategory(String category) {
+		Category = category;
+	}
+
+	public String getParents() {
+		return Parents;
+	}
+
+	public void setParents(String parents) {
+		Parents = parents;
+	}
+
+	public String getSex() {
+		return Sex;
+	}
+
+	public void setSex(String sex) {
+		Sex = sex;
 	}
 
 	public void SetLifeDamage(int damage) {
@@ -76,26 +105,19 @@ public class Fighter {
 	}
 
 	// retorna entity poder invocado
-	public Skills GetSkills() {
-		Random rand = new Random();
-		int number = rand.nextInt(SkillsList.size());
+	public Skills GetSkills(int val) {
+		int number = val;
 		return SkillsList.get(number);
 	}
 
-	// coquista novos poderes em funcao de pontos
-	public void AddSkillsList() {
-		if (Point >= 1000 && SkillsList.size() == 0)
-			SkillsList.add(new Boxe());
-		if (Point >= 2000 && SkillsList.size() == 1)
-			SkillsList.add(new JiuJitsu());
-		if (Point >= 3000 && SkillsList.size() == 2)
-			SkillsList.add(new MuayThai());
-		if (Point >= 4000 && SkillsList.size() == 3)
-			SkillsList.add(new Wrestling());
-		if (Point >= 5000 && SkillsList.size() == 4)
-			SkillsList.add(new Karate());
+	public void SetSkillsList() {
+		SkillsList.add(new Boxe());
+		SkillsList.add(new JiuJitsu());
+		SkillsList.add(new MuayThai());
+		SkillsList.add(new Karate());
+		SkillsList.add(new Wrestling());
 	}
-
+	
 	public void RemoveSkillsList(Skills skills) {
 		SkillsList.remove(skills);
 	}

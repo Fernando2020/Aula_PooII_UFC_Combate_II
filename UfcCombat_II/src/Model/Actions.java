@@ -6,9 +6,15 @@ public class Actions {
 	private int Kick;
 	private int Power;
 	private int Defense;
+	private int Modalidade;
 
-	public Actions() {
-
+	public Actions(int defense, int attack, int punch, int kick, int power, int modalidade) {
+		this.Defense = defense;
+		this.Attack = attack;
+		this.Punch = punch;
+		this.Kick = kick;
+		this.Power = power;
+		this.Modalidade = modalidade;
 	}
 
 	public int getAttack() {
@@ -49,6 +55,14 @@ public class Actions {
 
 	public void setDefense(int defense) {
 		Defense = defense;
+	}
+
+	public int getModalidade() {
+		return Modalidade;
+	}
+
+	public void setModalidade(int modalidade) {
+		Defense = modalidade;
 	}
 
 }

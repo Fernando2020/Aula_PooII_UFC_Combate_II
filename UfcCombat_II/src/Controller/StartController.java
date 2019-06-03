@@ -14,21 +14,37 @@ public class StartController {
 
 	private Archive archive;
 	private int archiveNumber = 0;
-	private Championship champioonship;
+	private Championship championship;
+	private FighterController fighterController;
+	private ChampionshipController championshipController;
+	private FighterChampionshipController fighterChampionshipController;
+	private ArrayList<FileViewModel> listFileViewModel;
+	private ArrayList<Fighter> listFighter;
+	private int contadorLuta = 1;
 
 	public StartController() {
 		this.archive = new Archive();
+		this.fighterController = new FighterController();
+		this.championshipController = new ChampionshipController();
+		this.fighterChampionshipController = new FighterChampionshipController();
 	}
 
-	public void Go() {
+	public boolean Go() {
 		InvokeFile();
+
 		for (int i = 0; i < archive.getCountArray(); i++) {
 			archiveNumber = i;
 			BindFile();
 			BindFileEntity();
-			champioonship.SetCombat();
-			champioonship.InvokeCombat();
+			if (i == 0) {
+				BindFighter();
+			}
+			BindChampionship();
+			BindFighterChampionship();
+			championship.SetCombat();
+			championship.InvokeCombat();
 		}
+		return true;
 	}
 
 	public void InvokeFile() {
@@ -47,14 +63,30 @@ public class StartController {
 		}
 	}
 
-	public void BindFileEntity() {
-		champioonship = new Championship(archive.getArrayFile(archiveNumber));
-		ArrayList<Fighter> listFighter = new ArrayList<Fighter>();
-		ArrayList<FileViewModel> listFileViewModel = new ArrayList<FileViewModel>();
-		listFileViewModel = archive.GetListFileViewModel();
-		int contadorLuta = 1, contadorLinha = 0;
-		Npc npc = new Npc(1, "Default");
+	public void BindFighter() {
+		for (Fighter fighter : listFighter) {
+			fighterController.PersistEntityFighter(fighter);
+		}
+	}
 
+	public void BindChampionship() {
+		championship.SetFighterList(listFighter);
+		championshipController.PersistEntityChampionship(championship);
+	}
+
+	public void BindFighterChampionship() {
+		fighterChampionshipController.PersistEntityFighterChampionship(listFighter, championship);
+	}
+
+	public void BindFileEntity() {
+		String anoChampionship = archive.getArrayFile(archiveNumber).substring(4, 8);
+		championship = new Championship(archiveNumber, archive.getArrayFile(archiveNumber), anoChampionship);
+		listFileViewModel = new ArrayList<FileViewModel>();
+		listFileViewModel = archive.GetListFileViewModel();
+		listFighter = new ArrayList<Fighter>();
+		int contadorLinha = 0, fighterId = 0;
+		contadorLuta = 1;
+		Npc npc = new Npc(1, "Default");
 		for (int i = 0; i < listFileViewModel.size(); i++) {
 			if (contadorLuta == listFileViewModel.get(i).getContadorLuta()) {
 
@@ -85,19 +117,20 @@ public class StartController {
 						listFileViewModel.get(idInfo).getSexoUm(), npc, 0);
 				fighterUm.SetActionsList(ActionsListUm);
 				fighterUm.SetSkillsList();
+				fighterUm.SetId(fighterId);
+				fighterId++;
 				fighterDois = new Fighter(listFileViewModel.get(idInfo).getNomeDois(),
 						listFileViewModel.get(idInfo).getPaisDois(), listFileViewModel.get(idInfo).getCategoriaDois(),
 						listFileViewModel.get(idInfo).getSexoDois(), npc, 0);
 				fighterDois.SetActionsList(ActionsListDois);
 				fighterDois.SetSkillsList();
-
+				fighterDois.SetId(fighterId);
+				fighterId++;
 				contadorLuta++;
 				listFighter.add(fighterUm);
 				listFighter.add(fighterDois);
-
 			}
-		}
 
-		champioonship.SetFighterList(listFighter);
+		}
 	}
 }

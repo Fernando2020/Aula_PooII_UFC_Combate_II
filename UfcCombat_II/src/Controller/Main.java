@@ -1,9 +1,11 @@
 package Controller;
 
+import View.View;
+
 public class Main {
 	public static void main(String[] args)
 	{
-		StartController start = new StartController();
-		start.Go();
+		View view = new View();
+		view.Menu();
 	}
 }

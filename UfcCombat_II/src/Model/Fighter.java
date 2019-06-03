@@ -35,6 +35,14 @@ public class Fighter {
 		Point = point;
 	}
 
+	public Fighter(int id, String name, String parents, String category, String sex) {
+		Id = id;
+		Name = name;
+		Category = category;
+		Parents = parents;
+		Sex = sex;
+	}
+
 	public Fighter() {}
 	
 	// GetSet
@@ -79,6 +87,10 @@ public class Fighter {
 		Life -= damage;
 	}
 
+	public void SetId(int id) {
+		Id = id;
+	}
+	
 	public void SetLifeCure(int cure) {
 		Life = cure;
 	}

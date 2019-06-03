@@ -1,27 +1,121 @@
 package Model;
 
+import View.View;
+
 public class Combat {
 	private int Id;
 	private String Name;
+	private int IdChampionship;
 	private String Category;
 	private Fighter First;
 	private Fighter Second;
 	private Fighter Winner;
 	private Fighter Loser;
 	private boolean KO;
+	private int PointWinner;
+	private int PointLoser;
+	private int IdFirst;
+	private int IdSecond;
+	private int IdWinner;
+	private int IdLoser;
 
 	// Constructor
-	public Combat(String name, String category, Fighter first, Fighter second) {
+	public Combat(String name, int idChampionship, String category, Fighter first, Fighter second) {
 		Name = name;
+		IdChampionship = idChampionship;
 		Category = category;
 		First = first;
 		Second = second;
 		KO = false;
 	}
 
+	public Combat(int id, String name, String category, int idChampionship, int idUm, int idDois, int idWinner,
+			int idLoser, boolean ko, int pointWinner, int pointLoser) {
+		Id = id;
+		Name = name;
+		Category = category;
+		IdChampionship = idChampionship;
+		IdFirst = idUm;
+		IdSecond = idDois;
+		IdWinner = idWinner;
+		IdLoser = idLoser;
+		KO = ko;
+		PointWinner = pointWinner;
+		PointLoser = pointLoser;
+	}
+
+	public Combat() {
+
+	}
+
 	// GetSet
+
 	public String getCategory() {
 		return Category;
+	}
+
+	public int getIdChampionship() {
+		return IdChampionship;
+	}
+
+	public void setIdChampionship(int idChampionship) {
+		IdChampionship = idChampionship;
+	}
+
+	public boolean isKO() {
+		return KO;
+	}
+
+	public void setKO(boolean kO) {
+		KO = kO;
+	}
+
+	public int getIdFirst() {
+		return IdFirst;
+	}
+
+	public void setIdFirst(int idFirst) {
+		IdFirst = idFirst;
+	}
+
+	public int getIdSecond() {
+		return IdSecond;
+	}
+
+	public void setIdSecond(int idSecond) {
+		IdSecond = idSecond;
+	}
+
+	public int getIdWinner() {
+		return IdWinner;
+	}
+
+	public void setIdWinner(int idWinner) {
+		IdWinner = idWinner;
+	}
+
+	public int getIdLoser() {
+		return IdLoser;
+	}
+
+	public void setIdLoser(int idLoser) {
+		IdLoser = idLoser;
+	}
+
+	public int getPointWinner() {
+		return PointWinner;
+	}
+
+	public void setPointWinner(int pointWinner) {
+		PointWinner = pointWinner;
+	}
+
+	public int getPointLoser() {
+		return PointLoser;
+	}
+
+	public void setPointLoser(int pointLoser) {
+		PointLoser = pointLoser;
 	}
 
 	public void setCategory(String category) {
@@ -186,40 +280,59 @@ public class Combat {
 	// verifica fim do jogo
 	private void CheckOut() {
 
-		System.out.println(First.GetPoint() + " = " + Second.GetPoint());
-
 		if (First.GetPoint() < Second.GetPoint()) {
 			Winner = Second;
 			Loser = First;
 			KO = true;
-			System.out.println("Ganhador: " + Winner.GetName() + " - " + Winner.GetPoint() + " X " + "Perdador: "
-					+ Loser.GetName() + " - " + Loser.GetPoint());
+			PointWinner = Second.GetPoint();
+			PointLoser = First.GetPoint();
+			IdFirst = First.GetId();
+			IdSecond = Second.GetId();
+			IdWinner = Second.GetId();
+			IdLoser = First.GetId();
 		} else if (Second.GetPoint() < First.GetPoint()) {
 			Winner = First;
 			Loser = Second;
 			KO = true;
-			System.out.println("Ganhador: " + Winner.GetName() + " - " + Winner.GetPoint() + " X " + "Perdador: "
-					+ Loser.GetName() + " - " + Loser.GetPoint());
-		} else if(First.GetLife() < Second.GetLife()) {
+			PointWinner = First.GetPoint();
+			PointLoser = Second.GetPoint();
+			IdFirst = Second.GetId();
+			IdSecond = First.GetId();
+			IdWinner = First.GetId();
+			IdLoser = Second.GetId();
+		} else if (First.GetLife() < Second.GetLife()) {
 			Winner = Second;
 			Loser = First;
 			KO = true;
-			System.out.println("Ganhador: " + Winner.GetName() + " - " + Winner.GetPoint() + " X " + "Perdador: "
-					+ Loser.GetName() + " - " + Loser.GetPoint());
-		}else if(First.GetLife() > Second.GetLife()) {
+			PointWinner = Second.GetPoint();
+			PointLoser = First.GetPoint();
+			IdFirst = First.GetId();
+			IdSecond = Second.GetId();
+			IdWinner = Second.GetId();
+			IdLoser = First.GetId();
+		} else if (First.GetLife() > Second.GetLife()) {
 			Winner = First;
 			Loser = Second;
 			KO = true;
-			System.out.println("Ganhador: " + Winner.GetName() + " - " + Winner.GetPoint() + " X " + "Perdador: "
-					+ Loser.GetName() + " - " + Loser.GetPoint());
-			
-		 }else {
-				Winner = First;
-				Loser = Second;
-				KO = true;
-				System.out.println("Ganhador: " + Winner.GetName() + " - " + Winner.GetPoint() + " X " + "Perdador: "
-						+ Loser.GetName() + " - " + Loser.GetPoint());
-		 }
+			PointWinner = First.GetPoint();
+			PointLoser = Second.GetPoint();
+			IdFirst = Second.GetId();
+			IdSecond = First.GetId();
+			IdWinner = First.GetId();
+			IdLoser = Second.GetId();
+		} else {
+			Winner = First;
+			Loser = Second;
+			KO = true;
+			PointWinner = First.GetPoint();
+			PointLoser = Second.GetPoint();
+			IdFirst = Second.GetId();
+			IdSecond = First.GetId();
+			IdWinner = First.GetId();
+			IdLoser = Second.GetId();
+		}
+
+		View.ExecucaoLutadores(Winner, Loser);
 	}
 
 	public Fighter GetWinner() {

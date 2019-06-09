@@ -5,8 +5,13 @@ import Repository.CombatDAO;
 
 public class CombatController {
 
-	public void PersistEntityCombat(Combat entity) {
+	public boolean PersistEntityCombat(Combat entity) {
 		CombatDAO combatDAO = new CombatDAO();
-		combatDAO.inserir(entity);
+		try {
+			combatDAO.inserir(entity);
+		} catch (Exception ex) {
+			return false;
+		}
+		return true;
 	}
 }

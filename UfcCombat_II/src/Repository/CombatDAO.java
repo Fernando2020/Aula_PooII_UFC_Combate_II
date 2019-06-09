@@ -77,7 +77,7 @@ public class CombatDAO {
 			conexao.close();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			return false;
 		}
 		if (valor == 1)
 			return true;

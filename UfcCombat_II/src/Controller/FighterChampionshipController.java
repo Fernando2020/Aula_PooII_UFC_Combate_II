@@ -9,20 +9,24 @@ import Model.Championship;
 import Repository.FighterChampionshipDAO;
 
 public class FighterChampionshipController {
-	public void PersistEntityFighterChampionship(ArrayList<Fighter> listEntity, Championship entity) {
+	public boolean PersistEntityFighterChampionship(ArrayList<Fighter> listEntity, Championship entity) {
 		FighterChampionshipDAO fighterChampionshipDAO = new FighterChampionshipDAO();
 		FighterChampionship fighterChampionship;
-		int i = 0;
-		for (Fighter fighter : listEntity) {
-			fighterChampionship = new FighterChampionship();
+		try {
+			int i = 0;
+			for (Fighter fighter : listEntity) {
+				fighterChampionship = new FighterChampionship();
 
-			fighterChampionship.SetId(i);
-			fighterChampionship.SetIdChampionship(entity.GetId());
-			fighterChampionship.SetIdFighter(fighter.GetId());
+				fighterChampionship.SetId(i);
+				fighterChampionship.SetIdChampionship(entity.GetId());
+				fighterChampionship.SetIdFighter(fighter.GetId());
 
-			fighterChampionshipDAO.inserir(fighterChampionship);
-			i++;
+				fighterChampionshipDAO.inserir(fighterChampionship);
+				i++;
+			}
+		} catch (Exception ex) {
+			return false;
 		}
-
+		return true;
 	}
 }

@@ -66,7 +66,7 @@ public class FighterDAO {
 			conexao.close();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			return false;
 		}
 		if (valor == 1)
 			return true;
@@ -111,6 +111,5 @@ public class FighterDAO {
 			return true;
 		else
 			return false;
-
 	}
 }

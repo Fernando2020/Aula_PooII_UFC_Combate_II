@@ -5,8 +5,13 @@ import Model.Fighter;
 
 public class FighterController {
 
-	public void PersistEntityFighter(Fighter entity) {
+	public boolean PersistEntityFighter(Fighter entity) {
 		FighterDAO fighterDAO = new FighterDAO();
-		fighterDAO.inserir(entity);
+		try {
+			fighterDAO.inserir(entity);
+		} catch (Exception ex) {
+			return false;
+		}
+		return true;
 	}
 }

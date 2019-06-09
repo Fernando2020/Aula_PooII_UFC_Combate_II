@@ -86,6 +86,7 @@ public class View {
 			}
 
 			else {
+				System.out.println("Fim do Jogo");
 				return;
 			}
 		}

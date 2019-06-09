@@ -5,8 +5,13 @@ import Repository.ChampionshipDAO;
 
 public class ChampionshipController {
 
-	public void PersistEntityChampionship(Championship entity) {
+	public boolean PersistEntityChampionship(Championship entity) {
 		ChampionshipDAO championshipDAO = new ChampionshipDAO();
-		championshipDAO.inserir(entity);
+		try {
+			championshipDAO.inserir(entity);
+		} catch (Exception ex) {
+			return false;
+		}
+		return true;
 	}
 }

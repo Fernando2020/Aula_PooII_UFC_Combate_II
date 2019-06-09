@@ -1,13 +1,20 @@
 package View;
 
 import java.util.Scanner;
+
+import Controller.ReportController;
 import Controller.StartController;
-import Repository.ReportDAO;
 import Model.Fighter;
 
 public class View {
+	private Scanner scan;
+
+	public View() {
+
+	}
+
 	public void Menu() {
-		Scanner scan = new Scanner(System.in);
+		scan = new Scanner(System.in);
 		int number = 1;
 		System.out.println("_________________________________________________________");
 		System.out.println("UFC-Combate");
@@ -24,8 +31,8 @@ public class View {
 			System.out.println("[6] - Número de vitórias por jogador");
 			System.out.println("[7] - Maior vencedor por categoria");
 			System.out.println("[8] - Número de lutas computadas no total");
-			System.out.println(
-					"[9] - Nomes dos lutadores, categoria, país, sexo e quantidade de vitorias (ordenado em ordem crescente de vitórias dentro de cada categoria)");
+			System.out.println("[9] - Nomes dos lutadores, categoria, país, sexo e quantidade de vitorias "
+					+ "(ordenado em ordem crescente de vitórias dentro de cada categoria)");
 			System.out.println("[0] - Sair");
 			number = scan.nextInt();
 
@@ -39,9 +46,45 @@ public class View {
 			}
 
 			else if (number == 2) {
-
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarVencedoresLuta());
 			}
-			
+
+			else if (number == 3) {
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarLutaLiga());
+			}
+
+			else if (number == 4) {
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarPontosLutadorLuta());
+			}
+
+			else if (number == 5) {
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarVitoriasPais());
+			}
+
+			else if (number == 6) {
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarVitoriasLutador());
+			}
+
+			else if (number == 7) {
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarMaiorLutadorCategoria());
+			}
+
+			else if (number == 8) {
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarQuantidadeLutas());
+			}
+
+			else if (number == 9) {
+				ReportController reportController = new ReportController();
+				System.out.println(reportController.selecionarLutaCategoriaResultado());
+			}
+
 			else {
 				return;
 			}

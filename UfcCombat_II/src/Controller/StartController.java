@@ -32,7 +32,7 @@ public class StartController {
 	public boolean Go() {
 		InvokeFile();
 
-		for (int i = 0; i < archive.getCountArray(); i++) {
+		for (int i = 0; i < archive.GetCountArray(); i++) {
 			archiveNumber = i;
 			BindFile();
 			BindFileEntity();
@@ -79,8 +79,8 @@ public class StartController {
 	}
 
 	public void BindFileEntity() {
-		String anoChampionship = archive.getArrayFile(archiveNumber).substring(4, 8);
-		championship = new Championship(archiveNumber, archive.getArrayFile(archiveNumber), anoChampionship);
+		String anoChampionship = archive.GetArrayFile(archiveNumber).substring(4, 8);
+		championship = new Championship(archiveNumber, archive.GetArrayFile(archiveNumber), anoChampionship);
 		listFileViewModel = new ArrayList<FileViewModel>();
 		listFileViewModel = archive.GetListFileViewModel();
 		listFighter = new ArrayList<Fighter>();
@@ -88,7 +88,7 @@ public class StartController {
 		contadorLuta = 1;
 		Npc npc = new Npc(1, "Default");
 		for (int i = 0; i < listFileViewModel.size(); i++) {
-			if (contadorLuta == listFileViewModel.get(i).getContadorLuta()) {
+			if (contadorLuta == listFileViewModel.get(i).GetContadorLuta()) {
 
 				ArrayList<Actions> ActionsListUm = new ArrayList<Actions>();
 				ArrayList<Actions> ActionsListDois = new ArrayList<Actions>();
@@ -98,30 +98,30 @@ public class StartController {
 				Fighter fighterDois;
 
 				for (FileViewModel fileViewModel : listFileViewModel) {
-					if (contadorLuta == fileViewModel.getContadorLuta()) {
-						actionsUm = new Actions(fileViewModel.getDefesaUm(), fileViewModel.getAtaqueUm(),
-								fileViewModel.getSocoUm(), fileViewModel.getChuteUm(), fileViewModel.getPoderUm(),
-								fileViewModel.getModalidadeUm());
-						actionsDois = new Actions(fileViewModel.getDefesaDois(), fileViewModel.getAtaqueDois(),
-								fileViewModel.getSocoDois(), fileViewModel.getChuteDois(), fileViewModel.getPoderDois(),
-								fileViewModel.getModalidadeDois());
+					if (contadorLuta == fileViewModel.GetContadorLuta()) {
+						actionsUm = new Actions(fileViewModel.GetDefesaUm(), fileViewModel.GetAtaqueUm(),
+								fileViewModel.GetSocoUm(), fileViewModel.GetChuteUm(), fileViewModel.GetPoderUm(),
+								fileViewModel.GetModalidadeUm());
+						actionsDois = new Actions(fileViewModel.GetDefesaDois(), fileViewModel.GetAtaqueDois(),
+								fileViewModel.GetSocoDois(), fileViewModel.GetChuteDois(), fileViewModel.GetPoderDois(),
+								fileViewModel.GetModalidadeDois());
 						ActionsListUm.add(actionsUm);
 						ActionsListDois.add(actionsDois);
-						contadorLuta = fileViewModel.getContadorLuta();
+						contadorLuta = fileViewModel.GetContadorLuta();
 						contadorLinha++;
 					}
 				}
 				int idInfo = contadorLinha - 1;
-				fighterUm = new Fighter(listFileViewModel.get(idInfo).getNomeUm(),
-						listFileViewModel.get(idInfo).getPaisUm(), listFileViewModel.get(idInfo).getCategoriaUm(),
-						listFileViewModel.get(idInfo).getSexoUm(), npc, 0);
+				fighterUm = new Fighter(listFileViewModel.get(idInfo).GetNomeUm(),
+						listFileViewModel.get(idInfo).GetPaisUm(), listFileViewModel.get(idInfo).GetCategoriaUm(),
+						listFileViewModel.get(idInfo).GetSexoUm(), npc, 0);
 				fighterUm.SetActionsList(ActionsListUm);
 				fighterUm.SetSkillsList();
 				fighterUm.SetId(fighterId);
 				fighterId++;
-				fighterDois = new Fighter(listFileViewModel.get(idInfo).getNomeDois(),
-						listFileViewModel.get(idInfo).getPaisDois(), listFileViewModel.get(idInfo).getCategoriaDois(),
-						listFileViewModel.get(idInfo).getSexoDois(), npc, 0);
+				fighterDois = new Fighter(listFileViewModel.get(idInfo).GetNomeDois(),
+						listFileViewModel.get(idInfo).GetPaisDois(), listFileViewModel.get(idInfo).GetCategoriaDois(),
+						listFileViewModel.get(idInfo).GetSexoDois(), npc, 0);
 				fighterDois.SetActionsList(ActionsListDois);
 				fighterDois.SetSkillsList();
 				fighterDois.SetId(fighterId);
@@ -130,7 +130,6 @@ public class StartController {
 				listFighter.add(fighterUm);
 				listFighter.add(fighterDois);
 			}
-
 		}
 	}
 }

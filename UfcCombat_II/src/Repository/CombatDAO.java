@@ -63,15 +63,15 @@ public class CombatDAO {
 							+ "			IdLoser, KO, PointWinner, PointLoser) values (?,?,?,?,?,?,?,?,?,?);");
 
 			result.setString(1, args.GetName());
-			result.setString(2, args.getCategory());
-			result.setInt(3, args.getIdChampionship());
-			result.setInt(4, args.getIdFirst());
-			result.setInt(5, args.getIdSecond());
-			result.setInt(6, args.getIdWinner());
-			result.setInt(7, args.getIdLoser());
-			result.setBoolean(8, args.isKO());
-			result.setInt(9, args.getPointWinner());
-			result.setInt(10, args.getPointLoser());
+			result.setString(2, args.GetCategory());
+			result.setInt(3, args.GetIdChampionship());
+			result.setInt(4, args.GetIdFirst());
+			result.setInt(5, args.GetIdSecond());
+			result.setInt(6, args.GetIdWinner());
+			result.setInt(7, args.GetIdLoser());
+			result.setBoolean(8, args.IsKO());
+			result.setInt(9, args.GetPointWinner());
+			result.setInt(10, args.GetPointLoser());
 
 			valor = result.executeUpdate();
 			conexao.close();
@@ -107,15 +107,15 @@ public class CombatDAO {
 					"update Combat Name=?, Category=?, NameChampionship=?, NameFirst=?, NameSecond=?, NameWinner=?,NameLoser=?, KO=?, PointWinner=?, PointLoser=? WHERE Id = ?");
 
 			result.setString(1, args.GetName());
-			result.setString(2, args.getCategory());
-			result.setInt(3, args.getIdChampionship());
-			result.setInt(4, args.getIdFirst());
-			result.setInt(5, args.getIdSecond());
-			result.setInt(6, args.getIdWinner());
-			result.setInt(7, args.getIdLoser());
-			result.setBoolean(8, args.isKO());
-			result.setInt(9, args.getPointWinner());
-			result.setInt(10, args.getPointLoser());
+			result.setString(2, args.GetCategory());
+			result.setInt(3, args.GetIdChampionship());
+			result.setInt(4, args.GetIdFirst());
+			result.setInt(5, args.GetIdSecond());
+			result.setInt(6, args.GetIdWinner());
+			result.setInt(7, args.GetIdLoser());
+			result.setBoolean(8, args.IsKO());
+			result.setInt(9, args.GetPointWinner());
+			result.setInt(10, args.GetPointLoser());
 			result.setInt(11, args.GetId());
 
 			valor = result.executeUpdate();

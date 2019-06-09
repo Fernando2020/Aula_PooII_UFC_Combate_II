@@ -58,9 +58,9 @@ public class FighterDAO {
 
 			result.setInt(1, args.GetId());
 			result.setString(2, args.GetName());
-			result.setString(3, args.getCategory());
-			result.setString(4, args.getParents());
-			result.setString(5, args.getSex());
+			result.setString(3, args.GetCategory());
+			result.setString(4, args.GetParents());
+			result.setString(5, args.GetSex());
 
 			valor = result.executeUpdate();
 			conexao.close();
@@ -96,9 +96,9 @@ public class FighterDAO {
 					.prepareStatement("update Fighter Name=?, Category=?,Parents=?,Sex=? WHERE Id = ?");
 
 			result.setString(1, args.GetName());
-			result.setString(2, args.getCategory());
-			result.setString(3, args.getParents());
-			result.setString(4, args.getSex());
+			result.setString(2, args.GetCategory());
+			result.setString(3, args.GetParents());
+			result.setString(4, args.GetSex());
 			result.setInt(5, args.GetId());
 
 			valor = result.executeUpdate();

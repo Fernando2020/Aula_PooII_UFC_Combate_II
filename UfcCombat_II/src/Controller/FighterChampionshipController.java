@@ -16,9 +16,9 @@ public class FighterChampionshipController {
 		for (Fighter fighter : listEntity) {
 			fighterChampionship = new FighterChampionship();
 
-			fighterChampionship.setId(i);
-			fighterChampionship.setIdChampionship(entity.GetId());
-			fighterChampionship.setIdFighter(fighter.GetId());
+			fighterChampionship.SetId(i);
+			fighterChampionship.SetIdChampionship(entity.GetId());
+			fighterChampionship.SetIdFighter(fighter.GetId());
 
 			fighterChampionshipDAO.inserir(fighterChampionship);
 			i++;

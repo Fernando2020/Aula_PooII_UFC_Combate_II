@@ -28,180 +28,179 @@ public class FileViewModel {
 
 	}
 
-	public int getId() {
+	public int GetId() {
 		return Id;
 	}
 
-	public void setId(int id) {
+	public void SetId(int id) {
 		Id = id;
 	}
 
-	public int getContadorLuta() {
+	public int GetContadorLuta() {
 		return ContadorLuta;
 	}
 
-	public void setContadorLuta(int contadorLuta) {
+	public void SetContadorLuta(int contadorLuta) {
 		ContadorLuta = contadorLuta;
 	}
 
-	public String getNomeUm() {
+	public String GetNomeUm() {
 		return NomeUm;
 	}
 
-	public void setNomeUm(String nomeUm) {
+	public void SetNomeUm(String nomeUm) {
 		NomeUm = nomeUm;
 	}
 
-	public String getCategoriaUm() {
+	public String GetCategoriaUm() {
 		return CategoriaUm;
 	}
 
-	public void setCategoriaUm(String categoriaUm) {
+	public void SetCategoriaUm(String categoriaUm) {
 		CategoriaUm = categoriaUm;
 	}
 
-	public String getPaisUm() {
+	public String GetPaisUm() {
 		return PaisUm;
 	}
 
-	public void setPaisUm(String paisUm) {
+	public void SetPaisUm(String paisUm) {
 		PaisUm = paisUm;
 	}
 
-	public String getSexoUm() {
+	public String GetSexoUm() {
 		return SexoUm;
 	}
 
-	public void setSexoUm(String sexoUm) {
+	public void SetSexoUm(String sexoUm) {
 		SexoUm = sexoUm;
 	}
 
-	public int getDefesaUm() {
+	public int GetDefesaUm() {
 		return DefesaUm;
 	}
 
-	public void setDefesaUm(int defesaUm) {
+	public void SetDefesaUm(int defesaUm) {
 		DefesaUm = defesaUm;
 	}
 
-	public int getAtaqueUm() {
+	public int GetAtaqueUm() {
 		return AtaqueUm;
 	}
 
-	public void setAtaqueUm(int ataqueUm) {
+	public void SetAtaqueUm(int ataqueUm) {
 		AtaqueUm = ataqueUm;
 	}
 
-	public int getSocoUm() {
+	public int GetSocoUm() {
 		return SocoUm;
 	}
 
-	public void setSocoUm(int socoUm) {
+	public void SetSocoUm(int socoUm) {
 		SocoUm = socoUm;
 	}
 
-	public int getChuteUm() {
+	public int GetChuteUm() {
 		return ChuteUm;
 	}
 
-	public void setChuteUm(int chuteUm) {
+	public void SetChuteUm(int chuteUm) {
 		ChuteUm = chuteUm;
 	}
 
-	public int getPoderUm() {
+	public int GetPoderUm() {
 		return PoderUm;
 	}
 
-	public void setPoderUm(int poderUm) {
+	public void SetPoderUm(int poderUm) {
 		PoderUm = poderUm;
 	}
 
-	public int getModalidadeUm() {
+	public int GetModalidadeUm() {
 		return ModalidadeUm;
 	}
 
-	public void setModalidadeUm(int modalidadeUm) {
+	public void SetModalidadeUm(int modalidadeUm) {
 		ModalidadeUm = modalidadeUm;
 	}
 
-	public String getNomeDois() {
+	public String GetNomeDois() {
 		return NomeDois;
 	}
 
-	public void setNomeDois(String nomeDois) {
+	public void SetNomeDois(String nomeDois) {
 		NomeDois = nomeDois;
 	}
 
-	public String getCategoriaDois() {
+	public String GetCategoriaDois() {
 		return CategoriaDois;
 	}
 
-	public void setCategoriaDois(String categoriaDois) {
+	public void SetCategoriaDois(String categoriaDois) {
 		CategoriaDois = categoriaDois;
 	}
 
-	public String getPaisDois() {
+	public String GetPaisDois() {
 		return PaisDois;
 	}
 
-	public void setPaisDois(String paisDois) {
+	public void SetPaisDois(String paisDois) {
 		PaisDois = paisDois;
 	}
 
-	public String getSexoDois() {
+	public String GetSexoDois() {
 		return SexoDois;
 	}
 
-	public void setSexoDois(String sexoDois) {
+	public void SetSexoDois(String sexoDois) {
 		SexoDois = sexoDois;
 	}
 
-	public int getDefesaDois() {
+	public int GetDefesaDois() {
 		return DefesaDois;
 	}
 
-	public void setDefesaDois(int defesaDois) {
+	public void SetDefesaDois(int defesaDois) {
 		DefesaDois = defesaDois;
 	}
 
-	public int getAtaqueDois() {
+	public int GetAtaqueDois() {
 		return AtaqueDois;
 	}
 
-	public void setAtaqueDois(int ataqueDois) {
+	public void SetAtaqueDois(int ataqueDois) {
 		AtaqueDois = ataqueDois;
 	}
 
-	public int getSocoDois() {
+	public int GetSocoDois() {
 		return SocoDois;
 	}
 
-	public void setSocoDois(int socoDois) {
+	public void SetSocoDois(int socoDois) {
 		SocoDois = socoDois;
 	}
 
-	public int getChuteDois() {
+	public int GetChuteDois() {
 		return ChuteDois;
 	}
 
-	public void setChuteDois(int chuteDois) {
+	public void SetChuteDois(int chuteDois) {
 		ChuteDois = chuteDois;
 	}
 
-	public int getPoderDois() {
+	public int GetPoderDois() {
 		return PoderDois;
 	}
 
-	public void setPoderDois(int poderDois) {
+	public void SetPoderDois(int poderDois) {
 		PoderDois = poderDois;
 	}
 
-	public int getModalidadeDois() {
+	public int GetModalidadeDois() {
 		return ModalidadeDois;
 	}
 
-	public void setModalidadeDois(int modalidadeDois) {
+	public void SetModalidadeDois(int modalidadeDois) {
 		ModalidadeDois = modalidadeDois;
 	}
-
 }

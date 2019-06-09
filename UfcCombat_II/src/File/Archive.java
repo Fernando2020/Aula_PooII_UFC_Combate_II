@@ -29,28 +29,28 @@ public class Archive {
 				arrayTmp = linha.split(";");
 
 				FileViewModel fileTmp = new FileViewModel();
-				fileTmp.setId(Integer.parseInt(arrayTmp[1]));
-				fileTmp.setContadorLuta(Integer.parseInt(arrayTmp[2]));
-				fileTmp.setNomeUm(arrayTmp[3]);
-				fileTmp.setCategoriaUm(arrayTmp[4]);
-				fileTmp.setPaisUm(arrayTmp[5]);
-				fileTmp.setSexoUm(arrayTmp[6]);
-				fileTmp.setDefesaUm(Integer.parseInt(arrayTmp[7]));
-				fileTmp.setAtaqueUm(Integer.parseInt(arrayTmp[8]));
-				fileTmp.setSocoUm(Integer.parseInt(arrayTmp[9]));
-				fileTmp.setChuteUm(Integer.parseInt(arrayTmp[10]));
-				fileTmp.setPoderUm(Integer.parseInt(arrayTmp[11]));
-				fileTmp.setModalidadeUm(Integer.parseInt(arrayTmp[12]));
-				fileTmp.setNomeDois(arrayTmp[13]);
-				fileTmp.setCategoriaDois(arrayTmp[14]);
-				fileTmp.setPaisDois(arrayTmp[15]);
-				fileTmp.setSexoDois(arrayTmp[16]);
-				fileTmp.setDefesaDois(Integer.parseInt(arrayTmp[17]));
-				fileTmp.setAtaqueDois(Integer.parseInt(arrayTmp[18]));
-				fileTmp.setSocoDois(Integer.parseInt(arrayTmp[19]));
-				fileTmp.setChuteDois(Integer.parseInt(arrayTmp[20]));
-				fileTmp.setPoderDois(Integer.parseInt(arrayTmp[21]));
-				fileTmp.setModalidadeDois(Integer.parseInt(arrayTmp[22]));
+				fileTmp.SetId(Integer.parseInt(arrayTmp[1]));
+				fileTmp.SetContadorLuta(Integer.parseInt(arrayTmp[2]));
+				fileTmp.SetNomeUm(arrayTmp[3]);
+				fileTmp.SetCategoriaUm(arrayTmp[4]);
+				fileTmp.SetPaisUm(arrayTmp[5]);
+				fileTmp.SetSexoUm(arrayTmp[6]);
+				fileTmp.SetDefesaUm(Integer.parseInt(arrayTmp[7]));
+				fileTmp.SetAtaqueUm(Integer.parseInt(arrayTmp[8]));
+				fileTmp.SetSocoUm(Integer.parseInt(arrayTmp[9]));
+				fileTmp.SetChuteUm(Integer.parseInt(arrayTmp[10]));
+				fileTmp.SetPoderUm(Integer.parseInt(arrayTmp[11]));
+				fileTmp.SetModalidadeUm(Integer.parseInt(arrayTmp[12]));
+				fileTmp.SetNomeDois(arrayTmp[13]);
+				fileTmp.SetCategoriaDois(arrayTmp[14]);
+				fileTmp.SetPaisDois(arrayTmp[15]);
+				fileTmp.SetSexoDois(arrayTmp[16]);
+				fileTmp.SetDefesaDois(Integer.parseInt(arrayTmp[17]));
+				fileTmp.SetAtaqueDois(Integer.parseInt(arrayTmp[18]));
+				fileTmp.SetSocoDois(Integer.parseInt(arrayTmp[19]));
+				fileTmp.SetChuteDois(Integer.parseInt(arrayTmp[20]));
+				fileTmp.SetPoderDois(Integer.parseInt(arrayTmp[21]));
+				fileTmp.SetModalidadeDois(Integer.parseInt(arrayTmp[22]));
 
 				this.ListFileViewModel.add(fileTmp);
 			}
@@ -64,11 +64,11 @@ public class Archive {
 		return this.ListFileViewModel;
 	}
 
-	public String getArrayFile(int number) {
+	public String GetArrayFile(int number) {
 		return ArrayFile[number].getName();
 	}
-	
-	public int getCountArray() {
+
+	public int GetCountArray() {
 		return ArrayFile.length;
 	}
 }

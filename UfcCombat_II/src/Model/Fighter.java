@@ -43,43 +43,56 @@ public class Fighter {
 		Sex = sex;
 	}
 
-	public Fighter() {}
-	
+	public Fighter() {
+	}
+
 	// GetSet
 
 	public int GetId() {
 		return Id;
 	}
 
+	public void SetId(int id) {
+		Id = id;
+	}
+
 	public String GetName() {
 		return Name;
+	}
+
+	public void SetName(String name) {
+		Name = name;
 	}
 
 	public int GetLife() {
 		return Life;
 	}
 
-	public String getCategory() {
+	public void SetLife(int life) {
+		Life = life;
+	}
+
+	public String GetCategory() {
 		return Category;
 	}
 
-	public void setCategory(String category) {
+	public void SetCategory(String category) {
 		Category = category;
 	}
 
-	public String getParents() {
+	public String GetParents() {
 		return Parents;
 	}
 
-	public void setParents(String parents) {
+	public void SetParents(String parents) {
 		Parents = parents;
 	}
 
-	public String getSex() {
+	public String GetSex() {
 		return Sex;
 	}
 
-	public void setSex(String sex) {
+	public void SetSex(String sex) {
 		Sex = sex;
 	}
 
@@ -87,10 +100,6 @@ public class Fighter {
 		Life -= damage;
 	}
 
-	public void SetId(int id) {
-		Id = id;
-	}
-	
 	public void SetLifeCure(int cure) {
 		Life = cure;
 	}
@@ -129,7 +138,7 @@ public class Fighter {
 		SkillsList.add(new Karate());
 		SkillsList.add(new Wrestling());
 	}
-	
+
 	public void RemoveSkillsList(Skills skills) {
 		SkillsList.remove(skills);
 	}

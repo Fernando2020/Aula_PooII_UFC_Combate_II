@@ -15,29 +15,27 @@ public class FighterChampionship {
 
 	}
 
-	public int getId() {
+	public int GetId() {
 		return Id;
 	}
 
-	public void setId(int id) {
+	public void SetId(int id) {
 		Id = id;
 	}
 
-	public int getIdFighter() {
+	public int GetIdFighter() {
 		return IdFighter;
 	}
 
-	public void setIdFighter(int idFighter) {
+	public void SetIdFighter(int idFighter) {
 		IdFighter = idFighter;
 	}
 
-	public int getIdChampionship() {
+	public int GetIdChampionship() {
 		return IdChampionship;
 	}
 
-	public void setIdChampionship(int idChampionship) {
+	public void SetIdChampionship(int idChampionship) {
 		IdChampionship = idChampionship;
 	}
-
-
 }

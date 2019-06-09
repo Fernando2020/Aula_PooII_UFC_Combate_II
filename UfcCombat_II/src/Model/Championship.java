@@ -37,17 +37,21 @@ public class Championship {
 	public void SetId(int id) {
 		Id = id;
 	}
-	
+
+	public String GetName() {
+		return Name;
+	}
+
+	public void SetName(String name) {
+		Name = name;
+	}
+
 	public String GetAno() {
 		return Ano;
 	}
 
 	public void SetAno(String ano) {
 		Ano = ano;
-	}
-
-	public String GetName() {
-		return Name;
 	}
 
 	public ArrayList<Fighter> GetFighterList() {
@@ -66,7 +70,7 @@ public class Championship {
 	public void SetCombat() {
 		int idCombat = 1;
 		for (int i = 0; i < FighterList.size(); i += 2) {
-			CombatList.add(new Combat(Name + " - Combate - " + idCombat, Id, FighterList.get(i).getCategory(),
+			CombatList.add(new Combat(Name + " - Combate - " + idCombat, Id, FighterList.get(i).GetCategory(),
 					FighterList.get(i), FighterList.get(i + 1)));
 			idCombat++;
 		}

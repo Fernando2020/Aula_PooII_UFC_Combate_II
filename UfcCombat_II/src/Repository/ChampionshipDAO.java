@@ -51,7 +51,8 @@ public class ChampionshipDAO {
 		try {
 			Connection conexao = new Conn().getConexao();
 
-			PreparedStatement result = conexao.prepareStatement("insert into Championship (Id, Name, Ano) values (?,?,?);");
+			PreparedStatement result = conexao
+					.prepareStatement("insert into Championship (Id, Name, Ano) values (?,?,?);");
 
 			result.setInt(1, args.GetId());
 			result.setString(2, args.GetName());

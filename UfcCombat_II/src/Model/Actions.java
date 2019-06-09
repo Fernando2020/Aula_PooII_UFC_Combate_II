@@ -17,51 +17,51 @@ public class Actions {
 		this.Modalidade = modalidade;
 	}
 
-	public int getAttack() {
+	public int GetAttack() {
 		return Attack;
 	}
 
-	public void setAttack(int attack) {
+	public void SetAttack(int attack) {
 		Attack = attack;
 	}
 
-	public int getPunch() {
+	public int GetPunch() {
 		return Punch;
 	}
 
-	public void setPunch(int punch) {
+	public void SetPunch(int punch) {
 		Punch = punch;
 	}
 
-	public int getKick() {
+	public int GetKick() {
 		return Kick;
 	}
 
-	public void setKick(int kick) {
+	public void SetKick(int kick) {
 		Kick = kick;
 	}
 
-	public int getPower() {
+	public int GetPower() {
 		return Power;
 	}
 
-	public void setPower(int power) {
+	public void SetPower(int power) {
 		Power = power;
 	}
 
-	public int getDefense() {
+	public int GetDefense() {
 		return Defense;
 	}
 
-	public void setDefense(int defense) {
+	public void SetDefense(int defense) {
 		Defense = defense;
 	}
 
-	public int getModalidade() {
+	public int GetModalidade() {
 		return Modalidade;
 	}
 
-	public void setModalidade(int modalidade) {
+	public void SetModalidade(int modalidade) {
 		Defense = modalidade;
 	}
 

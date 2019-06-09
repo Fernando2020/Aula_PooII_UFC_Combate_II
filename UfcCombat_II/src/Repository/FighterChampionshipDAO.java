@@ -34,7 +34,7 @@ public class FighterChampionshipDAO {
 		FighterChampionship entity;
 		try {
 			Connection conexao = new Conn().getConexao();
-			ResultSet result = conexao.prepareStatement("select * from FighterChampionship where Id" + args.getId())
+			ResultSet result = conexao.prepareStatement("select * from FighterChampionship where Id" + args.GetId())
 					.executeQuery();
 
 			while (result.next()) {
@@ -54,11 +54,11 @@ public class FighterChampionshipDAO {
 		try {
 			Connection conexao = new Conn().getConexao();
 
-			PreparedStatement result = conexao.prepareStatement(
-					"insert into FighterChampionship (IdFighter, IdChampionship) values (?,?);");
+			PreparedStatement result = conexao
+					.prepareStatement("insert into FighterChampionship (IdFighter, IdChampionship) values (?,?);");
 
-			result.setInt(1, args.getIdFighter());
-			result.setInt(2, args.getIdChampionship());
+			result.setInt(1, args.GetIdFighter());
+			result.setInt(2, args.GetIdChampionship());
 
 			valor = result.executeUpdate();
 			conexao.close();
@@ -77,7 +77,7 @@ public class FighterChampionshipDAO {
 			Connection conexao = new Conn().getConexao();
 			PreparedStatement result = conexao.prepareStatement("delete from FighterChampionship where Id = ?;");
 
-			result.setInt(1, args.getId());
+			result.setInt(1, args.GetId());
 			result.executeUpdate();
 			conexao.close();
 		} catch (Exception e) {

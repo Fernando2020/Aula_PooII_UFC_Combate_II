@@ -2,6 +2,13 @@ package Model;
 
 import View.View;
 
+/**
+ * Classe modelo para armazenar o tipo Combat, onde serão contidos, valores e
+ * métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public class Combat {
 	private int Id;
 	private String Name;
@@ -206,13 +213,21 @@ public class Combat {
 		NameLoser = nameLoser;
 	}
 
-	// prepara o combate
+	/**
+	 * Método responsável por inicializar o combate
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	public void Play() {
 		InvokeFighter();
 		CheckOut();
 	}
 
-	// controle de acoes
+	/**
+	 * Método responsável por calcular o combate
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void InvokeFighter() {
 
 		for (int i = 0; i < First.GetActionsList().size(); i++) {
@@ -276,7 +291,11 @@ public class Combat {
 		}
 	}
 
-	// controle de dano
+	/**
+	 * Método responsável por computar ataque do tipo power do lutador first
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void FirstAttackPower(int i) {
 		if (Second.GetActionsList().get(i).GetDefense() == 1) {
 			Second.SetLifeDamage(First.GetSkills(First.GetActionsList().get(i).GetModalidade()).GetDamage() / 2);
@@ -287,6 +306,11 @@ public class Combat {
 		}
 	}
 
+	/**
+	 * Método responsável por computar ataque do tipo power do lutador second
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void SecondAttackPower(int i) {
 		if (First.GetActionsList().get(i).GetDefense() == 1) {
 			First.SetLifeDamage(Second.GetSkills(Second.GetActionsList().get(i).GetModalidade()).GetDamage() / 2);
@@ -297,6 +321,11 @@ public class Combat {
 		}
 	}
 
+	/**
+	 * Método responsável por computar ataque do tipo punch do lutador first
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void FirstAttackSimplePunch(int i) {
 		if (Second.GetActionsList().get(i).GetKick() == 1) {
 			if (Second.GetActionsList().get(i).GetModalidade() <= First.GetActionsList().get(i).GetModalidade()) {
@@ -309,6 +338,11 @@ public class Combat {
 		}
 	}
 
+	/**
+	 * Método responsável por computar ataque do tipo punch do lutador second
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void SecondAttackSimplePunch(int i) {
 		if (First.GetActionsList().get(i).GetKick() == 1) {
 			if (First.GetActionsList().get(i).GetModalidade() <= Second.GetActionsList().get(i).GetModalidade()) {
@@ -321,6 +355,11 @@ public class Combat {
 		}
 	}
 
+	/**
+	 * Método responsável por computar ataque do tipo kick do lutador first
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void FirstAttackSimpleKick(int i) {
 		if (Second.GetActionsList().get(i).GetPunch() == 1) {
 			if (Second.GetActionsList().get(i).GetModalidade() <= First.GetActionsList().get(i).GetModalidade()) {
@@ -333,6 +372,11 @@ public class Combat {
 		}
 	}
 
+	/**
+	 * Método responsável por computar ataque do tipo kick do lutador second
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void SecondAttackSimpleKick(int i) {
 		if (First.GetActionsList().get(i).GetPunch() == 1) {
 			if (First.GetActionsList().get(i).GetModalidade() <= Second.GetActionsList().get(i).GetModalidade()) {
@@ -345,7 +389,12 @@ public class Combat {
 		}
 	}
 
-	// verifica fim do jogo
+	/**
+	 * Método responsável por computar o fim do combate e declarar vencedor e
+	 * perdedor e persistir na entidade do tipo Combat
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	private void CheckOut() {
 
 		if (First.GetPoint() < Second.GetPoint()) {

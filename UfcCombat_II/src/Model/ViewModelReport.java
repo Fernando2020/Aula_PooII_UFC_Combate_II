@@ -1,5 +1,12 @@
 package Model;
 
+/**
+ * Classe modelo para armazenar o tipo ViewModelReport, onde serão contidos,
+ * valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public class ViewModelReport {
 	private Fighter fighter = new Fighter();
 	private Championship championship = new Championship();

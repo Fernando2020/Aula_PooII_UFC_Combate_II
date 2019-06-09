@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import Controller.CombatController;
 import View.View;
 
+/**
+ * Classe modelo para armazenar o tipo Championship, onde serão contidos,
+ * valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira.
+ * @version 1.0.
+ */
 public class Championship {
 	private int Id;
 	private String Name;
@@ -66,7 +73,11 @@ public class Championship {
 		return CombatList;
 	}
 
-	// lista de combate
+	/**
+	 * Método responsável por gerar e persistir em memória uma lista de combates.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 */
 	public void SetCombat() {
 		int idCombat = 1;
 		for (int i = 0; i < FighterList.size(); i += 2) {
@@ -76,7 +87,12 @@ public class Championship {
 		}
 	}
 
-	// inicio de combate
+	/**
+	 * Método responsável por invocar os método do combate Play() e de controle de
+	 * persistencia do tipo Combat PersistEntityCombat(list).
+	 * 
+	 * @author Fernando G. Nogueira.
+	 */
 	public void InvokeCombat() {
 		View.ExecucaoChampionship(Id, Name, Ano);
 		for (int i = 0; i < CombatList.size(); i++) {

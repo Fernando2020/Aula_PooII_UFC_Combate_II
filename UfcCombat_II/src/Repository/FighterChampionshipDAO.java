@@ -8,8 +8,21 @@ import java.util.ArrayList;
 
 import Model.FighterChampionship;
 
+/**
+ * Classe DAO para cominucação com o sgbd o tipo FighterChampionship, onde serão
+ * contidos, valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira.
+ * @version 1.0.
+ */
 public class FighterChampionshipDAO {
 
+	/**
+	 * Método selecionar uma lista do tipo FighterChampionship.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - lista FighterChampionship.
+	 */
 	public ArrayList<FighterChampionship> selecionarTodos() {
 		ArrayList<FighterChampionship> listFighterChampionship = new ArrayList<FighterChampionship>();
 		try {
@@ -30,6 +43,13 @@ public class FighterChampionshipDAO {
 		return listFighterChampionship;
 	}
 
+	/**
+	 * Método selecionar uma entidade do tipo FighterChampionship.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param args FighterChampionship - Entidade de referência.
+	 * @return FighterChampionship - entidade do tipo FighterChampionship.
+	 */
 	public FighterChampionship selecionar(FighterChampionship args) {
 		FighterChampionship entity;
 		try {
@@ -49,6 +69,13 @@ public class FighterChampionshipDAO {
 		return new FighterChampionship();
 	}
 
+	/**
+	 * Método responsável por inserir uma entidade do tipo FighterChampionship.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param args FighterChampionship - Entidade de referência.
+	 * @return Boolean - true-Secesso/false-Falha.
+	 */
 	public boolean inserir(FighterChampionship args) {
 		int valor = 0;
 		try {
@@ -72,6 +99,12 @@ public class FighterChampionshipDAO {
 			return false;
 	}
 
+	/**
+	 * Método responsável por deletar uma entidade do tipo FighterChampionship.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param args FighterChampionship - Entidade de referência.
+	 */
 	public void deletar(FighterChampionship args) {
 		try {
 			Connection conexao = new Conn().getConexao();

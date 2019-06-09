@@ -2,6 +2,13 @@ package Model;
 
 import java.util.ArrayList;
 
+/**
+ * Classe modelo para armazenar o tipo Fighter, onde serão contidos, valores e
+ * métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public class Fighter {
 	private int Id;
 	private String Name;

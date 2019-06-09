@@ -7,6 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import Model.FileViewModel;
 
+/**
+ * Classe para ler e gravar o arquivo em entidade e memória, onde serão
+ * contidos, valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira.
+ * @version 1.0.
+ */
 public class Archive {
 
 	private String path = "files/";
@@ -14,11 +21,24 @@ public class Archive {
 	private File ArrayFile[];
 	private ArrayList<FileViewModel> ListFileViewModel;
 
+	/**
+	 * Método responsável por receber o nome dos arquivos e armazenas em memória.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @throws IOException tratamento de exceção de arquivos
+	 */
 	public void ReadArchivesPath() throws IOException {
 		this.File = new File(path);
 		ArrayFile = this.File.listFiles();
 	}
 
+	/**
+	 * Método responsável por gerar uma lista de entidade do tipo FileViewModel.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param val - número do arquivo
+	 * @throws IOException tratamento de exceção
+	 */
 	public void ReadArchives(int val) throws IOException {
 		try {
 			ListFileViewModel = new ArrayList<FileViewModel>();
@@ -60,14 +80,33 @@ public class Archive {
 		}
 	}
 
+	/**
+	 * Método responsável por retornar a lista do tipo FileViewModel.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retornar a lista do tipo FileViewModel.
+	 */
 	public ArrayList<FileViewModel> GetListFileViewModel() {
 		return this.ListFileViewModel;
 	}
 
+	/**
+	 * Método responsável por retornar o nome dos arquivos.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param number - número do indice.
+	 * @return String - Nome dos arquivos em memória.
+	 */
 	public String GetArrayFile(int number) {
 		return ArrayFile[number].getName();
 	}
 
+	/**
+	 * Método responsável por retornar a quantidade de arquivos em memória.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return Int - Quantidade de arquivos em memória.
+	 */
 	public int GetCountArray() {
 		return ArrayFile.length;
 	}

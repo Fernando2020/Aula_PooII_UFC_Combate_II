@@ -8,7 +8,21 @@ import java.util.ArrayList;
 
 import Model.Championship;
 
+/**
+ * Classe DAO para cominucação com o sgbd o tipo Championship, onde serão
+ * contidos, valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public class ChampionshipDAO {
+
+	/**
+	 * Método selecionar uma lista do tipo Championship.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - lista Championship.
+	 */
 	public ArrayList<Championship> selecionarTodos() {
 		ArrayList<Championship> listChampionship = new ArrayList<Championship>();
 		try {
@@ -28,6 +42,13 @@ public class ChampionshipDAO {
 		return listChampionship;
 	}
 
+	/**
+	 * Método selecionar uma entidade do tipo Championship
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Championship - Entidade de referência
+	 * @return Championship - entidade do tipo Championship
+	 */
 	public Championship selecionar(Championship args) {
 		Championship entity;
 		try {
@@ -46,6 +67,13 @@ public class ChampionshipDAO {
 		return new Championship();
 	}
 
+	/**
+	 * Método responsável por inserir uma entidade do tipo Championship
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Championship - Entidade de referência
+	 * @return Boolean - true-Secesso/false-Falha
+	 */
 	public boolean inserir(Championship args) {
 		int valor = 0;
 		try {
@@ -70,6 +98,12 @@ public class ChampionshipDAO {
 			return false;
 	}
 
+	/**
+	 * Método responsável por deletar uma entidade do tipo Championship
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Championship - Entidade de referência
+	 */
 	public void deletar(Championship args) {
 		try {
 			Connection conexao = new Conn().getConexao();
@@ -84,6 +118,13 @@ public class ChampionshipDAO {
 
 	}
 
+	/**
+	 * Método responsável por atualizar uma entidade do tipo Championship
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Championship - Entidade de referência
+	 * @return Boolean - true-Secesso/false-Falha
+	 */
 	public boolean update(Championship args) {
 		int valor = 0;
 		try {

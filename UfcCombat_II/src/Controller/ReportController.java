@@ -6,8 +6,22 @@ import java.util.ArrayList;
 
 import Model.ViewModelReport;
 
+/**
+ * Classe para Controle do tipo Report, onde serão contidos, valores e métodos
+ * para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public class ReportController {
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar os lutadores
+	 * vencedores de cada luta
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarVencedoresLuta() {
 		String retorno = "";
 		ReportDAO reportDao = new ReportDAO();
@@ -22,6 +36,13 @@ public class ReportController {
 		return retorno;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar as lutas
+	 * ocorridas em cada liga (2015, 2016, 2017, 2018 e 2019)
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarLutaLiga() {
 		String retorno = "";
 		ReportDAO reportDao = new ReportDAO();
@@ -40,6 +61,13 @@ public class ReportController {
 		return retorno;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar os pontos
+	 * ganhos para cada jogador em cada luta
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarPontosLutadorLuta() {
 		String retorno = "";
 		ReportDAO reportDao = new ReportDAO();
@@ -58,6 +86,13 @@ public class ReportController {
 		return retorno;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Número de vitórias por
+	 * país
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarVitoriasPais() {
 		String retorno = "";
 		ReportDAO reportDao = new ReportDAO();
@@ -70,6 +105,13 @@ public class ReportController {
 		return retorno;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Número de vitórias por
+	 * jogador
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarVitoriasLutador() {
 		String retorno = "";
 		ReportDAO reportDao = new ReportDAO();
@@ -82,6 +124,13 @@ public class ReportController {
 		return retorno;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Maior vencedor por
+	 * categoria
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarMaiorLutadorCategoria() {
 		String retorno = "";
 		String aux = "";
@@ -99,6 +148,13 @@ public class ReportController {
 		return retorno;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Número de lutas
+	 * computadas no total
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarQuantidadeLutas() {
 		String retorno = "";
 		ReportDAO reportDao = new ReportDAO();
@@ -110,6 +166,14 @@ public class ReportController {
 		return retorno;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Nomes dos lutadores,
+	 * categoria, país, sexo e quantidade de vitorias (ordenado em ordem crescente
+	 * de vitórias dentro de cada categoria)
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return String - Retorno do relatório do sgdb
+	 */
 	public String selecionarLutaCategoriaResultado() {
 		String retorno = "";
 		ReportDAO reportDao = new ReportDAO();

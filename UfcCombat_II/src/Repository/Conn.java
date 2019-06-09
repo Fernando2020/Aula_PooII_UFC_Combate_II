@@ -4,6 +4,13 @@ import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Classe de conexão com o sgbd, onde serão contidos, valores e métodos para o
+ * mesmo.
+ * 
+ * @author Fernando G. Nogueira.
+ * @version 1.0.
+ */
 public class Conn {
 	private String Host;
 	private String Usuario;
@@ -18,6 +25,12 @@ public class Conn {
 
 	}
 
+	/**
+	 * Método pela conexao com o sgbd.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return Entidade de conexão
+	 */
 	public Connection getConexao() {
 		try {
 			String url = "jdbc:mysql://" + this.Host + "/" + this.Banco;

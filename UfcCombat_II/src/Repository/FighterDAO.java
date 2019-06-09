@@ -8,8 +8,21 @@ import java.util.ArrayList;
 
 import Model.Fighter;
 
+/**
+ * Classe DAO para cominucação com o sgbd o tipo Fighter, onde serão contidos,
+ * valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira.
+ * @version 1.0.
+ */
 public class FighterDAO {
 
+	/**
+	 * Método selecionar uma lista do tipo Fighter.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - lista Fighter.
+	 */
 	public ArrayList<Fighter> selecionarTodos() {
 		ArrayList<Fighter> listFighter = new ArrayList<Fighter>();
 		try {
@@ -30,6 +43,13 @@ public class FighterDAO {
 		return listFighter;
 	}
 
+	/**
+	 * Método selecionar uma entidade do tipo Fighter.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param args Fighter - Entidade de referência.
+	 * @return Fighter - entidade do tipo Fighter.
+	 */
 	public Fighter selecionar(Fighter args) {
 		Fighter entity;
 		try {
@@ -48,6 +68,13 @@ public class FighterDAO {
 		return new Fighter();
 	}
 
+	/**
+	 * Método responsável por inserir uma entidade do tipo Fighter.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param args Fighter - Entidade de referência.
+	 * @return Boolean - true-Secesso/false-Falha.
+	 */
 	public boolean inserir(Fighter args) {
 		int valor = 0;
 		try {
@@ -74,6 +101,12 @@ public class FighterDAO {
 			return false;
 	}
 
+	/**
+	 * Método responsável por deletar uma entidade do tipo Fighter.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param args Fighter - Entidade de referência.
+	 */
 	public void deletar(Fighter args) {
 		try {
 			Connection conexao = new Conn().getConexao();
@@ -88,6 +121,13 @@ public class FighterDAO {
 
 	}
 
+	/**
+	 * Método responsável por atualizar uma entidade do tipo Fighter.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @param args Fighter - Entidade de referência.
+	 * @return Boolean - true-Secesso/false-Falha.
+	 */
 	public boolean update(Fighter args) {
 		int valor = 0;
 		try {

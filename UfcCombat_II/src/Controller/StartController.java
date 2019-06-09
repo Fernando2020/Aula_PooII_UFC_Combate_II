@@ -10,6 +10,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import File.Archive;
 
+/**
+ * Classe para Controle do bind em memória e da persistência das entidades no
+ * banco de dados, onde serão contidos, valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public class StartController {
 
 	private Archive archive;
@@ -29,6 +36,12 @@ public class StartController {
 		this.fighterChampionshipController = new FighterChampionshipController();
 	}
 
+	/**
+	 * Método responsável por inicializar todo procedimento de combate
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @return boolean - Retorno do true-Sucesso de geração dos combates
+	 */
 	public boolean Go() {
 		InvokeFile();
 
@@ -47,6 +60,11 @@ public class StartController {
 		return true;
 	}
 
+	/**
+	 * Método responsável por inicializar a leitura dos arquivos
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	public void InvokeFile() {
 		try {
 			archive.ReadArchivesPath();
@@ -55,6 +73,12 @@ public class StartController {
 		}
 	}
 
+	/**
+	 * Método responsável por invocar o método archive.ReadArchives() responsável
+	 * por armazenar em memória as linhas dos arquivos
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	public void BindFile() {
 		try {
 			archive.ReadArchives(archiveNumber);
@@ -63,21 +87,48 @@ public class StartController {
 		}
 	}
 
+	/**
+	 * Método responsável por invocar o método
+	 * fighterController.PersistEntityFighter responsável por persistir as entidades
+	 * do tipo Fighter no sgbd
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	public void BindFighter() {
 		for (Fighter fighter : listFighter) {
 			fighterController.PersistEntityFighter(fighter);
 		}
 	}
 
+	/**
+	 * Método responsável por invocar o método
+	 * championshipController.PersistEntityChampionship responsável por persistir as
+	 * entidades do tipo Championship no sgbd
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	public void BindChampionship() {
 		championship.SetFighterList(listFighter);
 		championshipController.PersistEntityChampionship(championship);
 	}
 
+	/**
+	 * Método responsável por invocar o método
+	 * fighterChampionshipController.PersistEntityFighterChampionship responsável
+	 * por persistir as entidades do tipo FighterChampionship no sgbd
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	public void BindFighterChampionship() {
 		fighterChampionshipController.PersistEntityFighterChampionship(listFighter, championship);
 	}
 
+	/**
+	 * Método responsável por persistir em memória os fighter e as actions e gerar
+	 * uma lista de fighter para ser persistidas
+	 * 
+	 * @author Fernando G. Nogueira
+	 */
 	public void BindFileEntity() {
 		String anoChampionship = archive.GetArrayFile(archiveNumber).substring(4, 8);
 		championship = new Championship(archiveNumber, archive.GetArrayFile(archiveNumber), anoChampionship);

@@ -7,7 +7,23 @@ import java.util.ArrayList;
 
 import Model.ViewModelReport;
 
+/**
+ * Classe DAO para cominucação com o sgbd o tipo Report, onde serão contidos,
+ * valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira.
+ * @version 1.0.
+ */
 public class ReportDAO {
+
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar os lutadores
+	 * vencedores de cada luta.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarVencedoresLuta() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -34,6 +50,14 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar as lutas.
+	 * ocorridas em cada liga (2015, 2016, 2017, 2018 e 2019) - Lutadores vencedores
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarLutaLigaWinner() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -63,6 +87,15 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar as lutas
+	 * ocorridas em cada liga (2015, 2016, 2017, 2018 e 2019) - Lutadores
+	 * perdedores.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarLutaLigaLoser() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -92,6 +125,14 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar os pontos
+	 * ganhos para cada jogador em cada luta - Lutadores vencedores.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarPontosLutadorLutaWinner() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -118,6 +159,14 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Computar os pontos
+	 * ganhos para cada jogador em cada luta - Lutadores perdedores.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarPontosLutadorLutaLoser() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -144,6 +193,14 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Número de vitórias por
+	 * país.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarVitoriasPais() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -169,6 +226,14 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Número de vitórias por
+	 * jogador.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarVitoriasLutador() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -194,6 +259,14 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Maior vencedor por
+	 * categoria.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarMaiorLutadorCategoria() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -222,6 +295,14 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Número de lutas
+	 * computadas no total.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarQuantidadeLutas() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {
@@ -244,6 +325,15 @@ public class ReportDAO {
 		return listEntity;
 	}
 
+	/**
+	 * Método responsável por receber o relatório do sgbd - Nomes dos lutadores,
+	 * categoria, país, sexo e quantidade de vitorias (ordenado em ordem crescente
+	 * de vitórias dentro de cada categoria).
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - Retorno de uma lista do tipo
+	 *         ViewModelReport.
+	 */
 	public ArrayList<ViewModelReport> selecionarLutaCategoriaResultado() {
 		ArrayList<ViewModelReport> listEntity = new ArrayList<ViewModelReport>();
 		try {

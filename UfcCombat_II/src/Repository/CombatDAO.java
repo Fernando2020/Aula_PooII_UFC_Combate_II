@@ -8,8 +8,21 @@ import java.util.ArrayList;
 
 import Model.Combat;
 
+/**
+ * Classe DAO para cominucação com o sgbd o tipo Combat, onde serão contidos,
+ * valores e métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public class CombatDAO {
 
+	/**
+	 * Método selecionar uma lista do tipo Combat.
+	 * 
+	 * @author Fernando G. Nogueira.
+	 * @return ArrayList - lista Combat.
+	 */
 	public ArrayList<Combat> selecionarTodos() {
 		ArrayList<Combat> listCombat = new ArrayList<Combat>();
 		try {
@@ -33,6 +46,13 @@ public class CombatDAO {
 		return listCombat;
 	}
 
+	/**
+	 * Método selecionar uma entidade do tipo Combat
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Combat - Entidade de referência
+	 * @return Combat - entidade do tipo Combat
+	 */
 	public Combat selecionar(Combat args) {
 		Combat entity;
 		try {
@@ -53,6 +73,13 @@ public class CombatDAO {
 		return new Combat();
 	}
 
+	/**
+	 * Método responsável por inserir uma entidade do tipo Combat
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Combat - Entidade de referência
+	 * @return Boolean - true-Secesso/false-Falha
+	 */
 	public boolean inserir(Combat args) {
 		int valor = 0;
 		try {
@@ -85,6 +112,12 @@ public class CombatDAO {
 			return false;
 	}
 
+	/**
+	 * Método responsável por deletar uma entidade do tipo Combat
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Combat - Entidade de referência
+	 */
 	public void deletar(Combat args) {
 		try {
 			Connection conexao = new Conn().getConexao();
@@ -99,6 +132,13 @@ public class CombatDAO {
 
 	}
 
+	/**
+	 * Método responsável por atualizar uma entidade do tipo Combat
+	 * 
+	 * @author Fernando G. Nogueira
+	 * @param args Combat - Entidade de referência
+	 * @return Boolean - true-Secesso/false-Falha
+	 */
 	public boolean update(Combat args) {
 		int valor = 0;
 		try {

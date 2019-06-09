@@ -2,6 +2,13 @@ package Model;
 
 import Interface.ISkills;
 
+/**
+ * Classe modelo para armazenar o tipo Skills, onde serão contidos, valores e
+ * métodos para o mesmo.
+ * 
+ * @author Fernando G. Nogueira
+ * @version 1.0
+ */
 public abstract class Skills implements ISkills {
 	private int Id;
 	private int Damage;

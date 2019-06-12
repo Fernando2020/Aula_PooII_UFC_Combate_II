@@ -2,8 +2,9 @@ package File;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import Model.FileViewModel;
 
@@ -42,7 +43,8 @@ public class Archive {
 	public void ReadArchives(int val) throws IOException {
 		try {
 			ListFileViewModel = new ArrayList<FileViewModel>();
-			BufferedReader br = new BufferedReader(new FileReader(ArrayFile[val]));
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+				    new FileInputStream(ArrayFile[val]), "UTF-8"));
 			String arrayTmp[];
 			while (br.ready()) {
 				String linha = br.readLine();
